@@ -86,7 +86,49 @@ if (!function_exists('new_excerpt_more')) {
 	add_filter ( 'excerpt_more','new_excerpt_more');
 }
 
+/*------------------------------------------------
+Crea el Tipo de Post para las productos
+---------------------------------------------------*/
+
+function create_post_type() {
+  register_post_type( 'productos',
+    array(
+      'labels' => array(
+        'name' => __( 'Productos' ),
+        'singular_name' => __( 'Producto' )
+      ),
+    'menu_position' => 26,
+    'rewrite' => array('slug' => 'productos'),
+    'public' => true,
+    'has_archive' => true,
+    'publicly_queryable' => true,
+    'supports' => array('title','editor','content','thumbnail','excerpt','author')
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
+
+if (!function_exists('crear_taxonomy_productos') ) {
+	function crear_taxonomy_productos(){
+
+	register_taxonomy(
+    'categorias',
+    'productos',
+    array(
+      'hierarchical' => true,
+      'label' => 'Categorias',
+      'query_var' => true,
+      'rewrite' => array('slug' => 'categorias-productos')
+    )
+  );
+
+  }
+   add_action( 'init', 'crear_taxonomy_productos' );
+}
 
 
 // ACTIVAR WIDGET AREA
 add_action('widgets_init','crear_widget_area');
+
+// ACTIVAR EL CUSTOMIZER
+require get_template_directory() . '/inc/customizer/customizer.php';
