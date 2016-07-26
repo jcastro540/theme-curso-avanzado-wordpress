@@ -19,9 +19,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo get_option( 'home'); ?>">
-            <img src="<?php echo get_theme_mod('curso_logo'); ?>" class="logo" alt="logo"/>
-
+          <a class="navbar-brand" href="">
+            Logo
           </a>
         </div>
         <?php

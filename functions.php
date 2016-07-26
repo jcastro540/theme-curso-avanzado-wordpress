@@ -51,3 +51,19 @@ if (!function_exists('encolar_css')) {
 //MENU
 require_once ('inc/wp_bootstrap_navwalker.php');
 
+ // REGISTRA WIDGETS AREA
+if(!function_exists('crear_widget_area')):
+  function crear_widget_area(){
+    register_sidebar(array(
+     'name' => __('Sidebar Widget Area', 'curso'),
+     'id' => 'sidebar-widget-area',
+     'description' => __('Sidebar principal lateral', 'curso'),
+     'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+     'after_widget' => '</div>',
+     'before_title' => '<h3 class="widget-title">',
+     'after_title' => '</h3>'
+    ));
+  }
+endif;
+// ACTIVAR WIDGET AREA
+add_action('widgets_init','crear_widget_area');
