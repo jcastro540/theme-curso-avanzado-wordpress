@@ -1,4 +1,4 @@
-<?php 
+<?php
   //SOPORTE Y CONFIGURACIÓN GENERAL DEL TEMA
   add_action('after_setup_theme', 'curso_setup');
   if ( !function_exists( 'curso_setup' ) ):
@@ -65,5 +65,28 @@ if(!function_exists('crear_widget_area')):
     ));
   }
 endif;
+
+// LEER MÁS EXCERPT
+if (!function_exists('custom_excerpt_length')) {
+	function custom_excerpt_length($length) {
+		return 120;
+	}
+
+	add_filter ( 'excerpt_length','custom_excerpt_length', 999);
+
+}
+if (!function_exists('new_excerpt_more')) {
+	function new_excerpt_more( $more){
+		$enlace = '<a href="';
+		$enlace .= get_permalink( get_the_ID());
+		$enlace .= '" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Ver el Artículo">Leer más <i class="icon icon-add"></i></a>';
+		return $enlace;
+
+	}
+	add_filter ( 'excerpt_more','new_excerpt_more');
+}
+
+
+
 // ACTIVAR WIDGET AREA
 add_action('widgets_init','crear_widget_area');

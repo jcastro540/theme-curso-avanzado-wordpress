@@ -5,7 +5,7 @@
 		<div class="col-sm-8">
 			<div class="row">
 			<h2>Esto es un articulo</h2>
-			<?php get_template_part('loop'); ?>
+			<?php get_template_part('loop-archive'); ?>
 			</div>
 		</div>
 
