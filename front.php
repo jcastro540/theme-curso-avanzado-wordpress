@@ -17,18 +17,14 @@ Template Name: Front Page
   <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="..." alt="...">
-        <div class="carousel-caption">
-          ...
-        </div>
+        <img src="<?php echo get_theme_mod('curso_slider1') ?>" alt="...">
       </div>
       <div class="item">
-        <img src="..." alt="...">
-        <div class="carousel-caption">
-          ...
-        </div>
+        <img src="<?php echo get_theme_mod('curso_slider2') ?>" alt="...">>
       </div>
-      ...
+      <div class="item">
+        <img src="<?php echo get_theme_mod('curso_slider3') ?>" alt="...">
+      </div>
     </div>
 
     <!-- Controls -->
@@ -45,15 +41,22 @@ Template Name: Front Page
 
 
 <section class="container mt20">
+  <h1 class="text-center"><?php echo get_theme_mod('curso_team_titulo'); ?></h1>
   <div class="row">
     <article class="col-sm-4">
-
+      <img src="<?php echo get_theme_mod('curso_team_img1') ?>" alt="" class="img-circle img-responsive center-block" />
+      <h3 class="text-center"></h3>
+      <p class="text-center"></p>
     </article>
     <article class="col-sm-4">
-
+      <img src="" alt="" class="img-circle img-responsive center-block" />
+      <h3 class="text-center"></h3>
+      <p class="text-center"></p>
     </article>
     <article class="col-sm-4">
-
+      <img src="" alt="" class="img-circle img-responsive center-block" />
+      <h3 class="text-center"></h3>
+      <p class="text-center"></p>
     </article>
   </div>
 </section>

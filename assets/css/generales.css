@@ -4,4 +4,11 @@
   position: relative;
   top: -10px; }
 
+.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+  height: 100vh;
+  width: 100%; }
+
+.mt20 {
+  margin-top: 20px; }
+
 /*# sourceMappingURL=generales.css.map */
