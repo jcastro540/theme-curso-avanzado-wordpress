@@ -20,7 +20,7 @@ Template Name: Front Page
         <img src="<?php echo get_theme_mod('curso_slider1') ?>" alt="...">
       </div>
       <div class="item">
-        <img src="<?php echo get_theme_mod('curso_slider2') ?>" alt="...">>
+        <img src="<?php echo get_theme_mod('curso_slider2') ?>" alt="...">
       </div>
       <div class="item">
         <img src="<?php echo get_theme_mod('curso_slider3') ?>" alt="...">
@@ -45,19 +45,43 @@ Template Name: Front Page
   <div class="row">
     <article class="col-sm-4">
       <img src="<?php echo get_theme_mod('curso_team_img1') ?>" alt="" class="img-circle img-responsive center-block" />
-      <h3 class="text-center"></h3>
-      <p class="text-center"></p>
+      <h3 class="text-center"><?php echo get_theme_mod('curso_team_subtitle1'); ?></h3>
+      <p class="text-center lead"><?php echo get_theme_mod('curso_team_parrafo1'); ?></p>
     </article>
     <article class="col-sm-4">
-      <img src="" alt="" class="img-circle img-responsive center-block" />
-      <h3 class="text-center"></h3>
-      <p class="text-center"></p>
+      <img src="<?php echo get_theme_mod('curso_team_img2') ?>" alt="" class="img-circle img-responsive center-block" />
+      <h3 class="text-center"><?php echo get_theme_mod('curso_team_subtitle2'); ?></h3>
+      <p class="text-center lead"><?php echo get_theme_mod('curso_team_parrafo2'); ?></p>
     </article>
     <article class="col-sm-4">
-      <img src="" alt="" class="img-circle img-responsive center-block" />
-      <h3 class="text-center"></h3>
-      <p class="text-center"></p>
+      <img src="<?php echo get_theme_mod('curso_team_img3') ?>" alt="" class="img-circle img-responsive center-block" />
+      <h3 class="text-center"><?php echo get_theme_mod('curso_team_subtitle3'); ?></h3>
+      <p class="text-center lead"><?php echo get_theme_mod('curso_team_parrafo3'); ?></p>
     </article>
+  </div>
+</section>
+
+<section class="container mt20 ocultar">
+  <h2 class="text-center">Productos</h2>
+  <br>
+  <div class="row">
+    <?php
+    $args = array( 'post_type' => 'productos', 'posts_per_page' => 3 );
+    $loop = new WP_Query( $args );
+    while ( $loop->have_posts() ) : $loop->the_post();
+      echo '<article class="col-sm-4">';
+              the_post_thumbnail( 'full', array( 'class' => 'img-responsive img-rounded center-block' ) );
+              echo '<h3 class="text-center">';
+                the_title();
+              echo '</h3>';
+
+              echo '<span class="text-center">';
+                the_excerpt();
+              echo '</span >';
+      echo '</article>';
+    endwhile;
+    ?>
+
   </div>
 </section>
 

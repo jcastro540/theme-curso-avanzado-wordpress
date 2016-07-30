@@ -143,7 +143,7 @@
     )
   ));
 
-  // Team Section
+  //------- Team Section-------------
   $wp_customize->add_section( 'curso_team_section' , array(
     'title'       => __( 'Nosotros', 'curso' ),
     'description' => 'Modificar Sección de Nosotros',
@@ -176,11 +176,161 @@
     $wp_customize,
     'curso_team_img1',
     array(
-      'label'      => __( 'Titulo de la sección', 'curso' ),
+      'label'      => __( 'Primera Imagen', 'curso' ),
       'section'    => 'curso_team_section',
       'settings'   => 'curso_team_img1'
     )
   ));
+
+  // Primer Sub Titulo del Nosotros
+  $wp_customize->add_setting( 'curso_team_subtitle1', array(
+    'default' => 'Titulo'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control(
+    $wp_customize,
+    'curso_team_subtitle1',
+    array(
+      'label'      => __( 'Primer subtitulo', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_subtitle1',
+      'type'       => 'text'
+    )
+  ));
+
+  // Primer parrafo del Nosotros
+  $wp_customize->add_setting( 'curso_team_parrafo1', array(
+    'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,ipsum dolor sit amet, consectetur adipisicing'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control(
+    $wp_customize,
+    'curso_team_parrafo1',
+    array(
+      'label'      => __( 'Primer parrafo', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_parrafo1',
+      'type'       => 'textarea'
+    )
+  ));
+
+  // Segunda imagen del Nosotros
+  $wp_customize->add_setting( 'curso_team_img2', array(
+    'default' => 'http://placehold.it/200x200?text=Team'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control(
+    $wp_customize,
+    'curso_team_img2',
+    array(
+      'label'      => __( 'Segunda Imagen', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_img2'
+    )
+  ));
+
+  // Segundo Sub Titulo del Nosotros
+  $wp_customize->add_setting( 'curso_team_subtitle2', array(
+    'default' => 'Titulo'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control(
+    $wp_customize,
+    'curso_team_subtitle2',
+    array(
+      'label'      => __( 'Segundo subtitulo', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_subtitle2',
+      'type'       => 'text'
+    )
+  ));
+
+  // Segundo parrafo del Nosotros
+  $wp_customize->add_setting( 'curso_team_parrafo2', array(
+    'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,ipsum dolor sit amet, consectetur adipisicing'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control(
+    $wp_customize,
+    'curso_team_parrafo2',
+    array(
+      'label'      => __( 'Segundo parrafo', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_parrafo2',
+      'type'       => 'textarea'
+    )
+  ));
+
+  // Tercera imagen del Nosotros
+  $wp_customize->add_setting( 'curso_team_img3', array(
+    'default' => 'http://placehold.it/200x200?text=Team'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control(
+    $wp_customize,
+    'curso_team_img3',
+    array(
+      'label'      => __( 'Tercera Imagen', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_img3'
+    )
+  ));
+
+  // Tercera Sub Titulo del Nosotros
+  $wp_customize->add_setting( 'curso_team_subtitle3', array(
+    'default' => 'Titulo'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control(
+    $wp_customize,
+    'curso_team_subtitle3',
+    array(
+      'label'      => __( 'Tercera subtitulo', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_subtitle3',
+      'type'       => 'text'
+    )
+  ));
+
+  // Tercer parrafo del Nosotros
+  $wp_customize->add_setting( 'curso_team_parrafo3', array(
+    'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,ipsum dolor sit amet, consectetur adipisicing'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control(
+    $wp_customize,
+    'curso_team_parrafo3',
+    array(
+      'label'      => __( 'Tercer parrafo', 'curso' ),
+      'section'    => 'curso_team_section',
+      'settings'   => 'curso_team_parrafo3',
+      'type'       => 'textarea'
+    )
+  ));
+
+  // Productos Ocultar o Mostrar la sección
+  $wp_customize->add_section( 'curso_productos_section' , array(
+    'title'       => __( 'Productos', 'curso' ),
+    'description' => 'Configuración de los Productos',
+    'priority'    => 45,
+    'panel' => 'landing'
+  ));
+
+  $wp_customize->add_setting('curso_productos[checkbox_test]', array(
+        'default'    => false
+  ));
+
+ $wp_customize->add_control(new WP_Customize_Control(
+   $wp_customize,
+   'curso_productos',
+   array(
+     'label'      => __( 'Mostrar u ocultar', 'curso' ),
+     'settings' => 'curso_productos[checkbox_test]',
+     'label'    => __('Ocultar la sección de Productos'),
+     'section'  => 'curso_productos_section',
+     'type'     => 'checkbox',
+   )
+ ));
 
 }
 
@@ -190,6 +340,14 @@
         h1, h2, h3, h4, h5, h5 {color: <?php echo get_theme_mod("curso_colores");?>}
         a {color: <?php echo get_theme_mod("curso_colores_link");?>}
         a:hover {text-decoration: none;}
+        .ocultar{
+          <?php $vari = get_theme_mod('curso_productos');
+            if ($vari['checkbox_test'] == 1) {
+              echo 'display: none;';
+            }
+          ?>
+        }
+
       </style>
     <?php
   }
